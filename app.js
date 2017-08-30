@@ -25,15 +25,56 @@ app.get('/', (request, response, next) => {
 
     // Decides what content to respond with.
 
+    const randomNumber = Math.floor(Math.random() * 1000);
+
+    // Send the "randomNumber" variable to the view
+    response.locals.theNumber = randomNumber;
+
     // Send the contents of the "views/home.ejs" file to the browser
     response.render('home.ejs');
 });
 
 
+const likes = [
+    'Game of Thrones',
+    'Biking',
+    'Parallel Parking',
+    'Tequila',
+    'Smoking Shisha',
+    'Lebanese People',
+    'Beer',
+    'Cheeseburgers'
+];
+
 // localhost:3000/about
 app.get('/about', (request, response, next) => {
+    // Send the "likes" variable to the view
+    response.locals.listOfThings = likes;
+
     // Send the contents of the "views/about-page.ejs" file to the browser
     response.render('about-page.ejs');
+});
+
+
+
+const fakeAwards = [
+    {
+      award: 'Best Brazilian 21 or Under',
+      recipient: 'Kevin'
+    },
+    {
+      award: 'Most Likely To Eat Chicken Kitchen',
+      recipient: 'Rachelle'
+    },
+    {
+      award: 'Best UM Alumnus That Is Mexican',
+      recipient: 'Arturo'
+    }
+];
+
+app.get('/awards', (request, response, next) => {
+    response.locals.listOfAwards = fakeAwards;
+    response.render('dem-prices.ejs');
 });
 
 

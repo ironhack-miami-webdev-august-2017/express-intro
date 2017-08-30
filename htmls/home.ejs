@@ -12,6 +12,30 @@
     <a href="/about"> About Us </a>
     <img src="/images/pineapple.gif">
 
+    <h1>
+      Today's Number is
+      <%= theNumber %>.
+    </h1>
+
+    <% for (let i = 0; i < theNumber; i++) { %>
+
+      <% if (i === 4) { %>
+
+        <div class="number-four">
+          🤡 NUMBER FOUR
+        </div>
+
+      <% } else { %>
+
+        <div class="number-<%= i %>">
+          Hello #<%= i %>
+        </div>
+
+      <% } %>
+
+    <% } %>
+
+
     <script src="/js/frontend.js"></script>
   </body>
 </html>

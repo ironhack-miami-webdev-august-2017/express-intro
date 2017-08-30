@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <!-- about-page.ejs -->
   <head>
     <meta charset="utf-8">
     <title> Hello, Express! </title>
@@ -8,18 +7,15 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <h1> About Page </h1>
-    <a href="/"> Home </a>
-    <img src="/images/cat.gif">
-
-    <h2> I enjoy... </h2>
+    <h1> Awards </h1>
 
     <ul>
-
-      <% listOfThings.forEach((oneThing) => { %>
-          <li> <%= oneThing %> </li>
+      <% listOfAwards.forEach((oneAward) => { %>
+          <li>
+            <h2> <%= oneAward.award %> </h2>
+            <p> Awarded to <%= oneAward.recipient %> </p>
+          </li>
       <% }) %>
-
     </ul>
 
     <script src="/js/frontend.js"></script>
