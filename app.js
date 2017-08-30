@@ -4,6 +4,11 @@ const express = require('express');
 // Create an Express app object
 const app = express();
 
+// Tell Express that our HTML files are located in the "htmls/" folder
+app.set('views', 'htmls');
+
+// Tell Express that our HTML files are in the EJS format
+app.set('view engine', 'ejs');
 
 // Tell Express that we have static files in our "public/" folder
 app.use(express.static('public'));
@@ -20,30 +25,15 @@ app.get('/', (request, response, next) => {
 
     // Decides what content to respond with.
 
-    // Send the string "<h1> Hello, Express! </h1>" to the browser
-    response.send(`
-      <link rel="stylesheet" href="/css/style.css">
-
-      <h1> Hello, Express! </h1>
-      <a href="/about"> About Us </a>
-      <img src="/images/pineapple.gif">
-
-      <script src="/js/frontend.js"></script>
-    `);
+    // Send the contents of the "views/home.ejs" file to the browser
+    response.render('home.ejs');
 });
 
 
 // localhost:3000/about
 app.get('/about', (request, response, next) => {
-    response.send(`
-      <link rel="stylesheet" href="/css/style.css">
-
-      <h1> About Page </h1>
-      <a href="/"> Home </a>
-      <img src="/images/cat.gif">
-
-      <script src="/js/frontend.js"></script>
-    `);
+    // Send the contents of the "views/about-page.ejs" file to the browser
+    response.render('about-page.ejs');
 });
 
 
