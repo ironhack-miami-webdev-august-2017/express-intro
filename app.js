@@ -1,4 +1,5 @@
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
 
 
 // Create an Express app object
@@ -10,8 +11,22 @@ app.set('views', 'htmls');
 // Tell Express that our HTML files are in the EJS format
 app.set('view engine', 'ejs');
 
+// Tell Express that our layout is called "master-template.ejs"
+// (it's understood that it's in the "htmls/" folder)
+app.set('layout', 'master-template.ejs');
+
+// Tell Express that when it renders it should also use our layout file
+app.use(expressLayouts);
+
 // Tell Express that we have static files in our "public/" folder
 app.use(express.static('public'));
+
+
+
+// "myTitle" is a global variable for your EJS files
+// (use "app.locals" to make EJS global variables)
+app.locals.myTitle = 'Hello, Express!';
+
 
 
 // Our first Express "route"

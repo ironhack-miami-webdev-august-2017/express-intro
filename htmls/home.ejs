@@ -1,41 +1,24 @@
-<!DOCTYPE html>
-<!-- home.ejs -->
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title> Hello, Express! </title>
+<img src="/images/pineapple.gif">
 
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
-  <body>
-    <h1> Hello, Express! </h1>
-    <a href="/about"> About Us </a>
-    <img src="/images/pineapple.gif">
+<h1>
+  Today's Number is
+  <%= theNumber %>.
+</h1>
 
-    <h1>
-      Today's Number is
-      <%= theNumber %>.
-    </h1>
+<% for (let i = 0; i < theNumber; i++) { %>
 
-    <% for (let i = 0; i < theNumber; i++) { %>
+  <% if (i === 4) { %>
 
-      <% if (i === 4) { %>
+    <div class="number-four">
+      🤡 NUMBER FOUR
+    </div>
 
-        <div class="number-four">
-          🤡 NUMBER FOUR
-        </div>
+  <% } else { %>
 
-      <% } else { %>
+    <div class="number-<%= i %>">
+      Hello #<%= i %>
+    </div>
 
-        <div class="number-<%= i %>">
-          Hello #<%= i %>
-        </div>
+  <% } %>
 
-      <% } %>
-
-    <% } %>
-
-
-    <script src="/js/frontend.js"></script>
-  </body>
-</html>
+<% } %>

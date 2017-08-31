@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> <%= myTitle %> </title>
+
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1> <%= myTitle %> </h1>
+
+      <nav>
+        <a href="/"> Home </a>
+        <a href="/about"> About Us </a>
+        <a href="/awards"> Special Awards </a>
+      </nav>
+    </header>
+
+    <!-- 🚨🚨🚨 DON'T FORGET THIS -->
+    <%- body -%>
+    <!-- 🚨🚨🚨 IMPORTANT-->
+
+    <footer>
+      <p> Made with ❤️ at Ironhack. </p>
+    </footer>
+
+    <script src="/js/frontend.js"></script>
+  </body>
+</html>

@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title> Hello, Express! </title>
+<h2> Awards </h2>
 
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
-  <body>
-    <h1> Awards </h1>
-
-    <ul>
-      <% listOfAwards.forEach((oneAward) => { %>
-          <li>
-            <h2> <%= oneAward.award %> </h2>
-            <p> Awarded to <%= oneAward.recipient %> </p>
-          </li>
-      <% }) %>
-    </ul>
-
-    <script src="/js/frontend.js"></script>
-  </body>
-</html>
+<ul>
+  <% listOfAwards.forEach((oneAward) => { %>
+      <li>
+        <h2> <%= oneAward.award %> </h2>
+        <p> Awarded to <%= oneAward.recipient %> </p>
+      </li>
+  <% }) %>
+</ul>
